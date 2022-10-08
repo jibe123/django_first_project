@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Post create {% endblock %}
+{% block content %}
+<div style="margin-top: 40px">
+    <form id="CreateForm" action="" method="POST" >
+        {% csrf_token %}
+        <div>
+        <input type="text"  name="title" placeholder="Title" />
+        </div>
+        <div style="margin-top: 8px">
+        <textarea name="description"  placeholder="Description" ></textarea>
+        </div>
+        <div style="margin-top: 5px">
+        <button type="submit"> Create post</button>
+        </div>
+        <h5 id="myhfive"> </h5>
+    </form>
+    <button onclick="mainFunction()">Click me </button>
+    <br>
+    {% if message  %}
+    <p>{{ message  }}</p>
+    {% endif %}
+    xadf
+</div>
+<script src="{% static 'js/main.js'  %}"> </script>
+{% endblock  %}
